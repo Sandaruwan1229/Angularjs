@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Script/angular.min.js"></script>
-    <title>Document</title>
+    <script src="Script/script.js"></script>
+    <title>Angular Js</title>
 </head>
 
-<body ng-app>
+<body ng-app="myapplication">
     4 + 3 = {{4+3}}
+    <div ng-controller="myController">
+        {{message}}
+    </div>
 </body>
 
 </html>
