@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <title>Angular Js (ng-repeat[Nested])</title>
+</head>
+
+<body ng-controller = "mycontroller2">
+    <div>
+        <ul ng-repeat="university in universities">
+            <li>
+                {{university.uniname}}
+                <ul ng-repeat="student in university.students">
+                    <li>
+                        {{student.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

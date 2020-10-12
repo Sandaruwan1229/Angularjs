@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/css/bootstrap.css"></script>
+    <title>Angular Js (Filtering)</title>
+</head>
+<body ng-controller ="mycontroller5">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div >
+            Number of Rows disply : <input type="number" step="1" min="0" max="5" ng-model ="rowNumber">
+        </div>
+        <br/>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Salary(number filter)</th>
+                <th>Salary($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat ="employee in employees | limitTo :rowNumber">
+                    <td>{{employee.name | uppercase}}</td>
+                    <td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender | lowercase}}</td>
+                    <td>{{employee.salary | number :2}}</td>
+                    <td>{{employee.salary | currency :"$"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>

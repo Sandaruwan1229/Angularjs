@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <title>Angular Js (two-way Binding)</title>
+</head>
+
+<body ng-controller = "mycontroller3">
+    <div>
+        <table>
+            <tr>
+                <th>First Number</th>
+                <th>Second Number</th>
+                <th>Sum</th>
+                <th>Subtract</th>
+                <th>Multiple</th>
+                <th>Division</th>
+            </tr>
+            <tr>
+                <td><input type="number" ng-model="claculator.firstnum"></td>
+                <td><input type="number" ng-model="claculator.secondnum"></td>
+                <td>{{claculator.firstnum + claculator.secondnum }}</td>
+                <td>{{claculator.firstnum - claculator.secondnum }}</td>
+                <td>{{claculator.firstnum * claculator.secondnum }}</td>
+                <td>{{claculator.firstnum / claculator.secondnum }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

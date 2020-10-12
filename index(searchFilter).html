@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="bootstrap/css/bootstrap.css"></script>
+    <title>Angular Js (searchFilter)</title>
+</head>
+
+<body>
+
+    <body ng-controller="mycontroller8">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    Secarch By : <input type="text" placeholder="search employee" ng-model="searchText">
+                </div>
+            </div>
+            <br>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th> Gender</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees |filter: searchText">
+                        <td>{{employee.name | uppercase}}</td>
+                        <td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+                        <td>{{employee.gender | lowercase}}</td>
+                        <td>{{employee.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+
+</html>
+</body>
+
+</html>

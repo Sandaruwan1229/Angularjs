@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication4">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/css/bootstrap.css"></script>
+    <title>Angular Js (Event Handaling)</title>
+</head>
+
+<body ng-controller ="mycontroller4">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Like</th>
+                <th>Dislike</th>
+                <th>Like/Dislike</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat ="language in languages">
+                <td>{{language.name}}</td>
+                <td>{{language.like}}</td>
+                <td>{{language.dislike}}</td>
+                <td>
+                    <input type="button" value="Like" ng-click ="incrementLikes(language)">
+                    <input type="button" value="Dislike" ng-click ="incrementDislikes(language)">
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</body>
+
+</html>

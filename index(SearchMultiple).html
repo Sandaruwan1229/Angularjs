@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication9">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="bootstrap/css/bootstrap.css"></script>
+    <title>Angular Js (SearchMultiple)</title>
+</head>
+
+<body>
+
+    <body ng-controller="mycontroller9">
+        <div class="container ">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    Secarch By : <input type="text" placeholder="search Name" ng-model="searchText.name"> 
+                                 <input type="text" placeholder="search City" ng-model="searchText.city">
+                                 <input type="checkbox" ng-model ="exactMatch"> Exact Match
+                </div>
+            </div>
+            <br>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th> Gender</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees |filter: searchText :exactMatch">
+                        <td>{{employee.name | lowercase}}</td>
+                        <td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+                        <td>{{employee.gender | lowercase}}</td>
+                        <td>{{employee.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <h2>Only search Name or City</h2>
+            <br>
+            <br>
+            Secarch By : <input type="text" placeholder="search name & city" ng-model="searchText1">
+
+            <br>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th> Gender</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees |filter:search">
+                        <td>{{employee.name | lowercase}}</td>
+                        <td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+                        <td>{{employee.gender | lowercase}}</td>
+                        <td>{{employee.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+
+</html>
+</body>
+
+</html>

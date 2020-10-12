@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapplication6">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script/angular.min.js"></script>
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="bootstrap/css/bootstrap.css"></script>
+    <title>Angular Js (Sorting)</title>
+</head>
+
+<body>
+
+    <body ng-controller="mycontroller6">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    Sort by : <select ng-model="typeOfSort">
+                                <option value="name"> Name</option>
+                                <option value="dateOfBirth"> Date of Birth</option>
+                                <option value="gender"> Gender</option>
+                                <option value="salary"> Salary</option>
+                            </select>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    Number of Rows disply : <input type="number" step="1" min="0" max="5" ng-model="rowNumber">
+                </div>
+                
+            </div>
+            
+            <br />
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Salary(number filter)</th>
+                        <th>Salary($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees | limitTo :rowNumber | orderBy :typeOfSort:false ">
+                        <td>{{employee.name | uppercase}}</td>
+                        <td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+                        <td>{{employee.gender | lowercase}}</td>
+                        <td>{{employee.salary | number :2}}</td>
+                        <td>{{employee.salary | currency :"$"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+
+</html>
+</body>
+
+</html>
